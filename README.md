@@ -1,9 +1,11 @@
 # Pipeline ETL con AWS Glue 4.0 (PySpark) y Docker
 
-![AWS Glue](https://img.shields.io/badge/AWS%20Glue-4.0-FF9900?style=flat&logo=amazonaws&logoColor=white)
-![PySpark](https://img.shields.io/badge/PySpark-3.3-E25A1C?style=flat&logo=apachespark&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-Local%20Dev-2496ED?style=flat&logo=docker&logoColor=white)
-![Parquet](https://img.shields.io/badge/Format-Parquet%20(Snappy)-50ABF1?style=flat)
+<p>
+  <img src="docs/badges/aws-glue.svg" alt="AWS Glue 4.0" height="20">
+  <img src="docs/badges/pyspark.svg" alt="PySpark 3.3" height="20">
+  <img src="docs/badges/docker.svg" alt="Docker Local Dev" height="20">
+  <img src="docs/badges/parquet.svg" alt="Parquet (Snappy)" height="20">
+</p>
 
 Pipeline ETL desarrollado como práctica de diplomatura en Data Science para procesar telemetría energética de equipos industriales. Utiliza la imagen oficial de **AWS Glue (`amazon/aws-glue-libs`)** en Docker para desarrollar, transformar y validar datos localmente antes de su despliegue en la nube.
 
