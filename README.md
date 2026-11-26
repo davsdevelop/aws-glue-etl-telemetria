@@ -13,6 +13,8 @@ Pipeline ETL desarrollado como práctica de diplomatura en Data Science para pro
 
 ## Arquitectura del Flujo
 
+![Arquitectura de Pipeline ETL Local con AWS Glue](docs/captures/00_arquitectura.jpeg)
+
 ```mermaid
 flowchart LR
     A[("CSV Crudo<br/>data/raw/telemetria_equipos.csv")] --> B["AWS Glue 4.0 (Docker)<br/>scripts/etl_telemetria.py"]
@@ -51,7 +53,12 @@ flowchart LR
 │   └── processed/
 │       └── telemetria_parquet/          # Salida columnar Parquet (Snappy)
 ├── docs/
-│   └── captures/                        # Capturas de evidencia de ejecución
+│   └── captures/
+│       ├── 00_arquitectura.jpeg         # Diagrama de arquitectura del pipeline
+│       ├── 01_etl_raw.png               # Evidencia datos crudos
+│       ├── 02_etl_processed.png         # Evidencia datos transformados
+│       ├── 03_salida_parquet.png        # Evidencia archivo Parquet
+│       └── 04_validacion_sql.png        # Evidencia consultas Spark SQL
 ├── scripts/
 │   ├── etl_telemetria.py                # Job ETL en PySpark / AWS Glue
 │   └── validar_sql.py                   # Consultas analíticas con Spark SQL
@@ -82,26 +89,6 @@ docker compose down
 
 ---
 
-## Resultados
-
-Consumo agregado por zona (12 registros procesados):
-
-| Zona | Registros | Consumo total (kWh) | Consumo promedio (kWh) |
-| :--- | ---: | ---: | ---: |
-| Planta Sur | 4 | 168.59 | 42.15 |
-| Planta Norte | 4 | 121.92 | 30.48 |
-| Bodega Central | 4 | 86.88 | 21.72 |
-
-Top 3 equipos por consumo acumulado:
-
-| Equipo | Zona | Horas operadas | Consumo total (kWh) |
-| :--- | :--- | ---: | ---: |
-| EQ-105 | Planta Sur | 17.5 | 121.09 |
-| EQ-103 | Planta Norte | 19.5 | 78.47 |
-| EQ-102 | Planta Sur | 14.5 | 47.50 |
-
----
-
 ## Evidencia de Ejecución
 
 <details>
@@ -125,11 +112,3 @@ Top 3 equipos por consumo acumulado:
 <br>
 <img src="docs/captures/04_validacion_sql.png" alt="Validación Spark SQL" width="100%">
 </details>
-
-
-
-## Arquitectura del Flujo
-
-<p align="center">
-  <img src="docs/captures/arquitectura_etl.png" alt="Arquitectura ETL AWS Glue Local vs Nube" width="100%">
-</p>
