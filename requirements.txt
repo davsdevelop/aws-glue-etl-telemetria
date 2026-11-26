@@ -1,0 +1,26 @@
+# Dependencias Python del proyecto aws-glue-etl-telemetria
+# Entorno objetivo: AWS Glue 4.0 (Apache Spark 3.3.0) sobre Docker.
+#
+# Uso local (solo para IDE o para ejecutar scripts/validar_sql.py fuera de Docker):
+#   pip install -r requirements.txt
+#
+# Dentro del contenedor NO hace falta instalar nada: la imagen oficial ya
+# incluye PySpark 3.3 y awsglue. Además, este archivo no está montado en el
+# contenedor (solo se montan ./data y ./scripts).
+
+pyspark==3.3.0
+
+# NOTA IMPORTANTE:
+# El paquete `awsglue` (GlueContext), requerido por scripts/etl_telemetria.py,
+# NO se distribuye en PyPI. Solo está disponible dentro de la imagen oficial:
+#   amazon/aws-glue-libs:glue_libs_4.0.0_image_01
+#
+# Para usarlo en un entorno LOCAL, se copió PyGlue.zip desde el contenedor al
+# site-packages del venv:
+#   docker compose cp glue-local:/home/glue_user/aws-glue-libs/PyGlue.zip /tmp/
+#   unzip /tmp/PyGlue.zip -d .venv/lib/python3.11/site-packages/
+#
+# Dentro del contenedor ya viene instalado (usar `python3`, NO `python`, que
+# apunta a Python 2.7 en la imagen).
+# Por lo tanto, el ETL debe ejecutarse preferentemente dentro de `glue-local`.
+

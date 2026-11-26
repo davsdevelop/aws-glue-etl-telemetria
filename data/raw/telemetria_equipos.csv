@@ -1,0 +1,13 @@
+id_equipo,zona,voltaje_v,corriente_a,horas_operacion,fecha
+  EQ-101 ,  Planta Norte  ,220,12.5,8.0,2026-10-01
+EQ-102  ,Planta Sur   ,220,15.0,6.5,2026-10-01
+  EQ-103,   Planta Norte,380,10.2,10.0,2026-10-01
+EQ-104 ,  Bodega Central  ,220,8.4,12.0,2026-10-02
+  EQ-101  ,Planta Norte  ,220,13.0,7.5,2026-10-02
+EQ-105,  Planta Sur ,380,18.5,9.0,2026-10-02
+  EQ-102,   Planta Sur  ,220,14.8,8.0,2026-10-03
+EQ-106  ,Bodega Central   ,220,9.1,11.0,2026-10-03
+  EQ-103 ,  Planta Norte,380,11.0,9.5,2026-10-03
+EQ-104,   Bodega Central ,220,8.0,10.0,2026-10-04
+  EQ-105  ,Planta Sur  ,380,17.9,8.5,2026-10-04
+EQ-106 ,  Bodega Central  ,220,9.5,12.0,2026-10-04
